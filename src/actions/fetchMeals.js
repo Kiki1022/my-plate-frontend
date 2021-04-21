@@ -1,9 +1,12 @@
+//import React from 'react'
 
 export function fetchMeals() {
-
-    // fetch('http://localhost:3000/api/v1/meals')
-    // .then(resp => resp.json())
-    // .then(data => console.log(data))
+    return (dispatch) => {
+        fetch('http://localhost:3000/api/v1/meals')
+        .then(resp => resp.json())
+        .then(data => console.log(data))
+}
+   //fetchMeals is a thunk function, its allowing the passing in dispatch built in function as an argument inside action creator, 
 //return action
 
 }
