@@ -8,7 +8,8 @@ const Meals = (props) =>{
 
     return (
         <div>
-            Meals
+       {props.meals.map(meal => 
+          <p key={meal.id}> {meal.location} - {meal.caption}</p> )}
         </div>
     )
 

@@ -7,14 +7,14 @@ import { fetchMeals } from '../actions/fetchMeals'
 class MealsContainer extends React.Component {
 
     componentDidMount() {
-      fetchMeals()
+      this.props.fetchMeals()
     }
 
     render() {
         return (
             <div>
             <MealsForm />
-            <Meals /> 
+            <Meals meals={this.props.meals}/> 
             </div>
         )
     }
