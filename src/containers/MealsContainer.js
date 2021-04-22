@@ -13,8 +13,8 @@ class MealsContainer extends React.Component {
     render() {
         return (
             <div>
-            <MealsForm />
-            <Meals meals={this.props.meals}/> 
+            <MealsForm /><br></br>
+            <Meals meals={this.props.meals}/><br></br>
             </div>
         )
     }

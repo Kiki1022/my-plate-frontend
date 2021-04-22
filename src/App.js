@@ -7,12 +7,6 @@ import MealsContainer from './containers/MealsContainer'
 
 class App extends React.Component{
 
-  //componentDidMount(){
-
-  //}
-
-
-
   render() {
     return (
       <div className="App">
@@ -22,5 +16,4 @@ class App extends React.Component{
   }
 }
 
-//export default connect(null, {fetchMeals})(App);//allows access to store are props(mapstatetoprops)
 export default App
