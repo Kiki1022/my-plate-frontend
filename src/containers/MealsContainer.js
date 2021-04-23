@@ -1,8 +1,10 @@
 import React from 'react' 
 import MealsForm from '../components/MealsForm'
+import {Route, Switch} from 'react-router-dom'
 import Meals from '../components/Meals'
 import { connect } from 'react-redux' //connect to store
 import { fetchMeals } from '../actions/fetchMeals'
+import Meal from '../components/Meal'
 
 class MealsContainer extends React.Component {
 
@@ -13,8 +15,13 @@ class MealsContainer extends React.Component {
     render() {
         return (
             <div>
-            <MealsForm /><br></br>
-            <Meals meals={this.props.meals}/><br></br>
+                <Switch>
+                    <Route path='/meals/new' component={MealsForm} />
+                 
+                    <Route path='/meals/:id' render={(routerProps) => <Meal {...routerProps} meals={this.props.meals} />} />
+            
+                    <Route path='/meals' render={(routerProps) => <Meals {...routerProps} meals={this.props.meals} />} />
+                </Switch> 
             </div>
         )
     }

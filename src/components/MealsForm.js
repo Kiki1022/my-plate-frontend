@@ -23,6 +23,12 @@ class MealsForm extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault()
         this.props.addMeal(this.state)
+        this.setState({
+            location: '',
+            caption: '',
+            img_src: ''  
+        })
+
     }
 
     render() {
