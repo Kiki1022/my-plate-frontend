@@ -5,7 +5,7 @@ import Meals from '../components/Meals'
 import { connect } from 'react-redux' //connect to store
 import { fetchMeals } from '../actions/fetchMeals'
 import Meal from '../components/Meal'
-
+import NavBar from '../components/NavBar'
 class MealsContainer extends React.Component {
 
     componentDidMount() {
@@ -15,7 +15,8 @@ class MealsContainer extends React.Component {
     render() {
         return (
             <div>
-                <Switch>
+              <NavBar />
+              <Switch>
                     <Route path='/meals/new' component={MealsForm} />
                  
                     <Route path='/meals/:id' render={(routerProps) => <Meal {...routerProps} meals={this.props.meals} />} />
