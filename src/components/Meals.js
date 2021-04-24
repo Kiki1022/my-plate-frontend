@@ -17,9 +17,12 @@ const Meals = (props) =>{
         <div>
        {props.meals.map(meal => 
        <li key={meal.id}>
-           <Link to={`/meals/${meal.id}`}>{meal.location}: {meal.caption}
-           <button onClick={() => handleDelete(meal)}>Delete</button>
+           <Link to={`/meals/${meal.id}`}>
+                <img className="img" src={meal.img_src} alt=""  height="200" width="250" /><br></br>
+                {meal.location}... "{meal.caption}" <br></br>
+                <button onClick={() => handleDelete(meal)}>Delete</button><br></br>
            </Link>
+         
        </li> )} 
         </div>
     )

@@ -6,6 +6,11 @@ import { connect } from 'react-redux' //connect to store
 import { fetchMeals } from '../actions/fetchMeals'
 import Meal from '../components/Meal'
 import NavBar from '../components/NavBar'
+import Welcome from '../components/Welcome'
+
+
+
+
 class MealsContainer extends React.Component {
 
     componentDidMount() {
@@ -15,14 +20,16 @@ class MealsContainer extends React.Component {
     render() {
         return (
             <div>
-              <NavBar />
-              <Switch>
-                    <Route path='/meals/new' component={MealsForm} />
+                <NavBar />
+              {/* <Switch> */}
+                    <Route exact path='/' component={Welcome} />
+
+                    <Route exact path='/meals/new' component={MealsForm} />
                  
-                    <Route path='/meals/:id' render={(routerProps) => <Meal {...routerProps} meals={this.props.meals} />} />
+                    <Route exact path='/meals/:id' render={(routerProps) => <Meal {...routerProps} meals={this.props.meals} />} />
             
-                    <Route path='/meals' render={(routerProps) => <Meals {...routerProps} meals={this.props.meals} />} />
-                </Switch> 
+                    <Route exact path='/meals' render={(routerProps) => <Meals {...routerProps} meals={this.props.meals} />} />
+                {/* </Switch>  */}
             </div>
         )
     }
