@@ -1,6 +1,7 @@
 import React from 'react' 
 import { connect } from 'react-redux'
 import { addMeal } from '../actions/addMeal'
+import { Redirect } from 'react-router-dom'
 //needs to be a class b/c it is a form and will have state..local or global state
 
 class MealsForm extends React.Component {
@@ -10,7 +11,8 @@ class MealsForm extends React.Component {
     this.state = {
             location: '',
             caption: '',
-            img_src: ''
+            img_src: '',
+            submitted: false //if not submitted, initialize and show the form
             }
         }
 
@@ -24,15 +26,17 @@ class MealsForm extends React.Component {
         event.preventDefault()
         this.props.addMeal(this.state)
         this.setState({
-            location: '',
-            caption: '',
-            img_src: ''  
+            submitted: true //if true redirect to /meals
+            // location: '',
+            // caption: '',
+            // img_src: ''  
         })
 
     }
 
     render() {
-        return (
+        return this.state.submitted ? <Redirect to='/meals' /> : (
+            
             <div>
               <form onSubmit={this.handleSubmit}>
                   <label>Location </label>

@@ -21,7 +21,7 @@ class MealsContainer extends React.Component {
         return (
             <div>
                 <NavBar />
-              {/* <Switch> */}
+              <Switch>
                     <Route exact path='/' component={Welcome} />
 
                     <Route exact path='/meals/new' component={MealsForm} />
@@ -29,7 +29,7 @@ class MealsContainer extends React.Component {
                     <Route exact path='/meals/:id' render={(routerProps) => <Meal {...routerProps} meals={this.props.meals} />} />
             
                     <Route exact path='/meals' render={(routerProps) => <Meals {...routerProps} meals={this.props.meals} />} />
-                {/* </Switch>  */}
+                </Switch> 
             </div>
         )
     }
