@@ -17,3 +17,7 @@ NEED BASIC FORM STYLING
 X need to make most recent post render first
 X on meal show page, its rendering the wrong post-check routes 
 X need to get rid of dot and quotation
+
+mapDispatchToProps-takes a set of action creators and makes them "dispatchable". It then passes the object to components as a prop.
+
+How do all child components of the Provider obtain store? through connect()

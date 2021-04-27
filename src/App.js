@@ -3,7 +3,7 @@ import React from 'react'
 //import { connect } from 'react-redux' //allows to incorporate react-redux into our react application
 //import { fetchMeals } from './actions/fetchMeals'
 import MealsContainer from './containers/MealsContainer'
-
+import './App.css'
 
 class App extends React.Component{
 

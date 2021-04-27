@@ -1,0 +1,21 @@
+.navbar{
+    width: 100%;
+    display: flex;
+    padding: 20px;
+    background-color: rgb(11, 121, 84);   
+    justify-content: flex-end;
+
+}
+
+.navbar > *:first-child{
+    flex-grow: 1;
+}
+
+.navbar > *:not(:first-child){
+    margin-left: 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+}

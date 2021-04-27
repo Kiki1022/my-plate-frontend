@@ -1,7 +1,5 @@
 
-
 export const addMeal = (data) => {
-    console.log('b')
     console.log(data)
 
     return (dispatch) => {

@@ -39,7 +39,7 @@ const mapStateToProps = state => {
     return {
         meals: state.meals 
     }
-}
+}// mapStateToProps filters the results of Redux states into something that a smart component needs, and then passes those into that component as a prop
 
 export default connect(mapStateToProps, {fetchMeals})(MealsContainer)
 //to see info we need to use mapStateToProps
