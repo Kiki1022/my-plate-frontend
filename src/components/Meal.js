@@ -13,9 +13,9 @@ const Meal = (props) => {
     return meal ?  (
         <div>
             <li> 
-            <img className="img" src={meal.img_src} alt=""  height="200" width="250" />
-            <span>{meal ? meal.location : null}...   "{meal ? meal.caption : null}"</span>
-             
+                <h2><span>{meal ? meal.location : null}</span></h2> 
+                <h4><span>"{meal ? meal.caption : null}"</span></h4>
+                <img className="img" src={meal.img_src} alt=""  height="200" width="250" /><br/>
             </li> 
         </div> 
     ) : <div></div>
