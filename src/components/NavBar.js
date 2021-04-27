@@ -10,8 +10,8 @@ const NavBar = () => {
   return (
     <div className="navbar">
       <NavLink to="/">Home</NavLink><br></br>
-      <NavLink to="/meals/new">Post My Plate</NavLink><br></br>    
-      <NavLink to="/meals">All Plates</NavLink><br></br>
+      <NavLink to="/meals/new">Post My Meal</NavLink><br></br>    
+      <NavLink to="/meals">View All Meals</NavLink><br></br>
       
      </div>
   )}

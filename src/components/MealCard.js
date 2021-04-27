@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 
 const MealCard = ({meal, onDelete}) => {
 
-
 return (
     <li>
     <Link to={`/meals/${meal.id}`}>
@@ -14,4 +13,5 @@ return (
     <button onClick={onDelete}>Delete</button> 
 </li> ) 
 }
+
 export default MealCard
