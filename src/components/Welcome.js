@@ -4,7 +4,7 @@ import React from 'react'
 const Welcome = () => {
     return (
         <div className="welcome">
-           <h1>Welcome to My Plate!</h1>
+           <h1 className="welcome__title">Welcome to My Plate!</h1>
         </div>
     )
 }

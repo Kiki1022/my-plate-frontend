@@ -9,8 +9,6 @@ import NavBar from '../components/NavBar'
 import Welcome from '../components/Welcome'
 
 
-
-
 class MealsContainer extends React.Component {
 
     componentDidMount() {

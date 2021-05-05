@@ -14,8 +14,5 @@ export function fetchMeals() {
 //return action
 
 
-
-
-
 //dispatchEvent(actionObject)
 //action creator creates an action object and then action object will be dispactched to our reducer which will return a newly updated state based on the action sent
