@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 
 
-const MealCard = ({meal, handleDelete}) => {
+const MealCard = ({meal, handleDelete}) => { //desctructured so i can pass in handleDelete and set key/value pairs the same, allows you to return object and pull the values out of the object
 
     return (
         <li className="card">

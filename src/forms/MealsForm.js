@@ -6,26 +6,23 @@ import { Redirect } from 'react-router-dom'
 
 class MealsForm extends React.Component {
 
-    constructor(props){
-        super(props)
-
-    this.state = {
+        state = {
             location: '',
             caption: '',
             img_src: '',
             submitted: false //if not submitted, initialize and show the form
             }
-        }
-
+        
     handleChange = (event) => {
+        
         this.setState({
             [event.target.name]: event.target.value
         })
-    }
+    }//mention onchange first
 
     handleSubmit = (event) => {
         event.preventDefault()
-        this.props.addMeal(this.state)
+        this.props.addMeal(this.state)//this.state represents values
         this.setState({
             submitted: true //if true redirect to /meals 
         })
@@ -37,13 +34,11 @@ class MealsForm extends React.Component {
             <div className="meal-form">
               <form onSubmit={this.handleSubmit}>
                   <label>Location </label>
-                  <input type="text" placeholder="" value={this.state.location} name="location" onChange={this.handleChange}/><br></br><br></br>
+                    <input type="text" placeholder="" value={this.state.location} name="location" onChange={this.handleChange}/><br></br><br></br>
                   <label>Description </label>
-                  <input type="text" placeholder="" value={this.state.caption} name="caption" onChange={this.handleChange}/><br></br><br></br>
-                  
+                    <input type="text" placeholder="" value={this.state.caption} name="caption" onChange={this.handleChange}/><br></br><br></br>
                   <label>Image </label>
-                  <input id='img-src' type="text" value={this.state.img_src} name="img_src" onChange={this.handleChange}/><br></br><br></br>
-                    
+                    <input id='img-src' type="text" value={this.state.img_src} name="img_src" onChange={this.handleChange}/><br></br><br></br>  
                 <input type="submit" />
               </form>
             </div>

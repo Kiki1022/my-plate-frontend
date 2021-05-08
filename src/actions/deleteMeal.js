@@ -1,3 +1,4 @@
+
 export const deleteMeal = (mealId) => {
 
     return (dispatch) => {
@@ -5,8 +6,6 @@ export const deleteMeal = (mealId) => {
             method: 'DELETE'
         })
         .then(()=> dispatch({type: 'DELETE_MEAL', payload: mealId}) )
-        // .then(response => response.json())
-        // .then(meal => dispatch({type: 'DELETE_MEAL', payload: meal})) //having problem parsing the json out of it
     }
 
 }

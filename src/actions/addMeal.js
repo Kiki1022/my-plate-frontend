@@ -1,7 +1,7 @@
 
 export const addMeal = (data) => {
     console.log(data)
-
+    
     return (dispatch) => {
       fetch('http://localhost:3000/api/v1/meals', {
           headers: {

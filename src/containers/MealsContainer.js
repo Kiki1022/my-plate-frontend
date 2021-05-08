@@ -1,12 +1,12 @@
 import React from 'react' 
-import MealsForm from '../components/MealsForm'
 import {Route, Switch} from 'react-router-dom'
-import Meals from '../components/Meals'
 import { connect } from 'react-redux' //connect to store
 import { fetchMeals } from '../actions/fetchMeals'
+import MealsForm from '../forms/MealsForm'
+import Meals from './Meals'
 import Meal from '../components/Meal'
-import NavBar from '../components/NavBar'
-import Welcome from '../components/Welcome'
+import NavBar from '../static/NavBar'
+import Welcome from '../static/Welcome'
 
 
 class MealsContainer extends React.Component {
@@ -19,15 +19,15 @@ class MealsContainer extends React.Component {
         return (
             <div>
                 <NavBar />
-              <Switch>
-                    <Route exact path='/' component={Welcome} />
+                    <Switch>
+                            <Route exact path='/' component={Welcome} />
 
-                    <Route exact path='/meals/new' component={MealsForm} />
-                 
-                    <Route exact path='/meals/:id' render={(routerProps) => <Meal {...routerProps} meals={this.props.meals} />} />
-            
-                    <Route exact path='/meals' render={(routerProps) => <Meals {...routerProps} meals={this.props.meals} />} />
-                </Switch> 
+                            <Route exact path='/meals/new' component={MealsForm} />
+                        
+                            <Route exact path='/meals/:id' render={(routerProps) => <Meal {...routerProps} meals={this.props.meals} />} />
+                    
+                            <Route exact path='/meals' render={(routerProps) => <Meals {...routerProps} meals={this.props.meals} />} />
+                        </Switch> 
             </div>
         )
     }
@@ -37,8 +37,5 @@ const mapStateToProps = state => {
     return {
         meals: state.meals 
     }
-}// mapStateToProps filters the results of Redux states into something that a smart component needs, and then passes those into that component as a prop
-
-export default connect(mapStateToProps, {fetchMeals})(MealsContainer)
-//to see info we need to use mapStateToProps
-//first argument in connect means we want to get your redux store and map it 
+}
+export default connect(mapStateToProps,{fetchMeals})(MealsContainer)

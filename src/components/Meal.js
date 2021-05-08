@@ -1,12 +1,13 @@
 import React from 'react' 
 
+
 const Meal = (props) => {
 
-     let meal;
+    let meal; //initializing the variable within the scope of this component
     
      if (props.meals.length) 
      // eslint-disable-next-line 
-        meal=props.meals.find(m => m.id == props.match.params.id) //find is searching through each objects. when m.id == param.id, that is the object we want
+        meal=props.meals.find(m => m.id == props.match.params.id) 
 
     return meal ? (
         <div className="card">
