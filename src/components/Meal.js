@@ -4,11 +4,11 @@ import React from 'react'
 const Meal = (props) => {
 
     let meal; //initializing the variable within the scope of this component
-    
+
      if (props.meals.length) 
      // eslint-disable-next-line 
-        meal=props.meals.find(m => m.id == props.match.params.id) 
-
+        meal = props.meals.find(m => m.id == props.match.params.id) 
+  
     return meal ? (
         <div className="card">
             <div className="card__image">

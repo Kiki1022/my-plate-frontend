@@ -8,9 +8,10 @@ import { deleteMeal } from '../actions/deleteMeal'
 class Meals extends React.Component{
 
     state = {
-        searchMeal: []
+        searchMeal: [],
+        //sortedList: []
     }
-   
+
    
     handleLocation = (value) => {
 
@@ -23,34 +24,46 @@ class Meals extends React.Component{
           
             })
 
-        this.setState({
-            searchMeal: newList
-        })     
+           
+            this.setState({
+                searchMeal: newList
+            })     
     }
 
     handleDelete(meal) {
         this.props.deleteMeal(meal.id)
-        this.forceUpdate()
+        //this.props.history.push('/meals')
+
+        //debugger
+        //this.forceUpdate()//look up
     }
 
+    //  sortMeal = () => { 
+    //     const newList =  this.props.meals.sort((a,b) => (a.location < b.location)  ? 1 : -1)
+    //     this.setState({
+    //         sortedList: newList
+    //     })
+    //  }
+     
+    
     renderMeals(){
         const meals = this.state.searchMeal.length ? this.state.searchMeal : this.props.meals
-         return [...meals].reverse().map(meal => <MealCard key={meal.id} meal={meal} handleDelete={()=>this.handleDelete(meal)} />)//cloning original array
-        // return [...meals].reverse().map(meal => <MealCard key={meal.id} meal={meal} />)
+         return [...meals].reverse().map(meal => <MealCard key={meal.id} meal={meal} handleDelete={ () => this.handleDelete(meal)} />)//cloning original array
     }
    
     render(){
-        return (
+           return (
             <div>
+                {/* <button onClick={this.sortMeal}>SORT</button> */}
                <SearchLocation handleLocation={this.handleLocation} />
                <div className="meals-list">
-                    {this.renderMeals()}
+                    {(this.renderMeals())}
                </div>
              </div>
         )
     }
+    
 }
 
  export default connect(null, {deleteMeal})(Meals)
 
-// export default Meals

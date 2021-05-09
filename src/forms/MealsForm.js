@@ -16,19 +16,20 @@ class MealsForm extends React.Component {
     handleChange = (event) => {
         
         this.setState({
-            [event.target.name]: event.target.value
+            [event.target.name]: event.target.value  //allows keys to be dynamic
         })
-    }//mention onchange first
+    }
 
-    handleSubmit = (event) => {
-        event.preventDefault()
-        this.props.addMeal(this.state)//this.state represents values
+    handleSubmit = (event) => {//event is the form just submitted
+        event.preventDefault()//prevent reload
+        this.props.addMeal(this.state)//this.state represents values in the form 
         this.setState({
             submitted: true //if true redirect to /meals 
         })
     }
 
     render() {
+      
         return this.state.submitted ? <Redirect to='/meals' /> : (
             
             <div className="meal-form">

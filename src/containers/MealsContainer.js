@@ -14,7 +14,8 @@ class MealsContainer extends React.Component {
     componentDidMount() {
       this.props.fetchMeals()
     }
-
+//switch will match the first location based on the route, *it allows us to render nested routes properly*. check article
+//exact path makes sure to read the whole url path before going to that route
     render() {
         return (
             <div>
@@ -27,10 +28,12 @@ class MealsContainer extends React.Component {
                             <Route exact path='/meals/:id' render={(routerProps) => <Meal {...routerProps} meals={this.props.meals} />} />
                     
                             <Route exact path='/meals' render={(routerProps) => <Meals {...routerProps} meals={this.props.meals} />} />
-                        </Switch> 
+                    </Switch> 
             </div>
         )
+       
     }
+    
 }
 
 const mapStateToProps = state => {

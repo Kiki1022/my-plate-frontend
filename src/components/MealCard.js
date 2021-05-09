@@ -1,10 +1,9 @@
 import React from 'react' 
 import { Link } from 'react-router-dom'
+import LikeButton from './LikeButton'
 
 
-
-const MealCard = ({meal, handleDelete}) => { //desctructured so i can pass in handleDelete and set key/value pairs the same, allows you to return object and pull the values out of the object
-
+const MealCard = ({meal, handleDelete}) => { 
     return (
         <li className="card">
             <div className="card__image">
@@ -15,7 +14,10 @@ const MealCard = ({meal, handleDelete}) => { //desctructured so i can pass in ha
                         <h2>{meal ? meal.location : null}</h2> 
                     </Link>
                 <h4>"{meal ? meal.caption : null}"</h4>
-                <button onClick={handleDelete}>Delete</button> 
+                <button onClick={handleDelete}>Delete</button> <br/><br/>
+
+                <LikeButton />
+
             </div> 
         </li> ) 
 }
