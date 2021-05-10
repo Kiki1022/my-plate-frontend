@@ -12,7 +12,10 @@ import Welcome from '../static/Welcome'
 class MealsContainer extends React.Component {
 
     componentDidMount() {
+
       this.props.fetchMeals()
+      
+      
     }
 //switch will match the first location based on the route, *it allows us to render nested routes properly*. check article
 //exact path makes sure to read the whole url path before going to that route
@@ -31,7 +34,7 @@ class MealsContainer extends React.Component {
                     </Switch> 
             </div>
         )
-       
+     //by passing routing props, we can access the keys of router prop objects eg match. "props of router"
     }
     
 }

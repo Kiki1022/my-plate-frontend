@@ -16,5 +16,3 @@ export const addMeal = (data) => {
     }
 
 }
-
-//redux uses actions to call reducers which in turn manipulates the state

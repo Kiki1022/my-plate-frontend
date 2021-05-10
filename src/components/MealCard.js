@@ -1,6 +1,7 @@
+  
 import React from 'react' 
 import { Link } from 'react-router-dom'
-import LikeButton from './LikeButton'
+
 
 
 const MealCard = ({meal, handleDelete}) => { 
@@ -15,8 +16,6 @@ const MealCard = ({meal, handleDelete}) => {
                     </Link>
                 <h4>"{meal ? meal.caption : null}"</h4>
                 <button onClick={handleDelete}>Delete</button> <br/><br/>
-
-                <LikeButton />
 
             </div> 
         </li> ) 

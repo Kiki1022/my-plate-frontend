@@ -7,7 +7,7 @@ const Meal = (props) => {
 
      if (props.meals.length) 
      // eslint-disable-next-line 
-        meal = props.meals.find(m => m.id == props.match.params.id) 
+        meal = props.meals.find(m => m.id == props.match.params.id) //using router props to make sure id of the route matches meal id
   
     return meal ? (
         <div className="card">

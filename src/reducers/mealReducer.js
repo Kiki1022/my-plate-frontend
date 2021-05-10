@@ -2,14 +2,14 @@
 export default function mealReducer(state = {meals: []}, action) {
     
     switch (action.type) {
-        
+    
     case 'FETCH_MEALS':
 
-    return {meals: action.payload}
+    return {meals: action.payload}//action.payload is return from fetch request
     
     case 'ADD_MEAL':
      
-        return{...state, meals: [...state.meals, action.payload]}
+        return {...state, meals: [...state.meals, action.payload]}
     
     case 'DELETE_MEAL':
       
